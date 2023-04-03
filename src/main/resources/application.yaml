@@ -7,6 +7,20 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: reggie_take_out
+  mail:
+    host: smtp.qq.com
+    # QQ邮箱，这里为发件人
+    username: 2742909370@qq.com
+    # QQ邮箱授权码
+    password: vzwvzdciwcfbdhcf
+    port: 587
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          socketFactoryClass: javax.net.ssl.SSLSocketFactory
+          #          开启debug以后，邮件发送过程的日志会在控制台上打印出来
+        debug: true
 
 
 mybatis-plus:
@@ -24,3 +38,6 @@ server:
 
 reggie:
   path: D:\img\
+
+
+
