@@ -10,9 +10,9 @@ spring:
   mail:
     host: smtp.qq.com
     # QQ邮箱，这里为发件人
-    username: 2742909370@qq.com
+    username: 2550369355@qq.com
     # QQ邮箱授权码
-    password: vzwvzdciwcfbdhcf
+    password: pjqhqsyzkjbgdjid
     port: 587
     default-encoding: UTF-8
     properties:
