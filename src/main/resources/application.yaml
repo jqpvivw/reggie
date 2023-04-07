@@ -13,14 +13,14 @@ spring:
     username: 2550369355@qq.com
     # QQ邮箱授权码
     password: pjqhqsyzkjbgdjid
-    port: 587
-    default-encoding: UTF-8
-    properties:
-      mail:
-        smtp:
-          socketFactoryClass: javax.net.ssl.SSLSocketFactory
-          #          开启debug以后，邮件发送过程的日志会在控制台上打印出来
-        debug: true
+#    port: 587
+#    default-encoding: UTF-8
+#    properties:
+#      mail:
+#        smtp:
+#          socketFactoryClass: javax.net.ssl.SSLSocketFactory
+#          #          开启debug以后，邮件发送过程的日志会在控制台上打印出来
+#        debug: true
 
 
 mybatis-plus:

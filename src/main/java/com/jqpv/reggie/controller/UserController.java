@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Map;
 
@@ -54,8 +55,8 @@ public class UserController {
         //StringUtils.isNotEmpty字符串非空判断
         if (StringUtils.isNotEmpty(email)) {
 
-            //发送一个四位数的验证码,把验证码变成String类型
-            String code = ValidateCodeUtils.generateValidateCode(4).toString();
+            //发送一个6位数的验证码,把验证码变成String类型
+            String code = ValidateCodeUtils.generateValidateCode(6).toString();
             String text = "【不知道写什么（测试）】您好，您的登录验证码为：" + code + "，请尽快登录";
             log.info("验证码为：" + code);
 
@@ -108,6 +109,21 @@ public class UserController {
         }
         return R.error("登录失败");
     }
+
+    /**
+     * 用户退出
+     * @param request
+     * @return
+     */
+    @PostMapping("/loginout")
+    public R<String> logout(HttpServletRequest request){
+        //清理Session中保存的当前登陆用户的id
+        request.getSession().removeAttribute("user");
+        return R.success("退出成功");
+    }
+
+
+
 }
 
 
